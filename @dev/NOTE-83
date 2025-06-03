@@ -1,0 +1,2 @@
+in the graph of child_energy = 83, the drops after it hit 50 organsims are due to mongodb rejecting connections (too many)
+before that, the drops are natural

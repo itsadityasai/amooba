@@ -1,0 +1,8 @@
+usleep() to prevent mongodb overload? or keep it as an overload switch off mechanism? will need to implement exception handling if second scenario (accurate graphs ; readable output).
+VERY INTERESTING : WITH 83, WHEN THE ORGANISM COUNT WENT DOWN AFTER HITTING THE MONGODB QUERY COUNT BARRIER, IT CAME BACK UP. IT KEPT RESTORING ITSELF!! OMG!!
+83 seems to be the one.. graph not shown because is innacurate.. when an unhandled exception occurs the organism isn't removed from the db
+
+10000x10000 plane instead?
+
+1. let's try the second scenario and see what the graph is like
+2. let's see what happens with usleep()

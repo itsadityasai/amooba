@@ -1,0 +1,1 @@
+..\db\mongorestore.exe /archive:..\@dev\db_backup\100health4sameparent
