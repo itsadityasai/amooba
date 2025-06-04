@@ -15,9 +15,8 @@ from datetime import datetime
 from random import randint
 from GLOBALS import *
 
-# NOTE: not really accurate because there is no lock
 
-movement.logfile = open(f"logs/{LOGFILE_NAME}.log", 'a')
+movement.logfile = open(f"logs/{_id}.log", 'w')
 
 try:
 

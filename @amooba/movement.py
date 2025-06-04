@@ -42,5 +42,5 @@ def goto(_id, new_location) -> bool: #new_location is an ARRAY NOT A TUPLE
             _id,
             __distance(original_location, new_location) / ENERGY_MOVEMENT_DROP
         )
-        logfile.write(f"{_id}:{original_location}:{new_location}\n")
+        logfile.write(f"{str(datetime.now())}:{original_location}:{new_location}\n")
         return True

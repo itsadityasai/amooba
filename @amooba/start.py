@@ -8,6 +8,16 @@ from sys import argv
 from os import system
 from subprocess import Popen
 
+import os
+import shutil
+
+def reset_directory(path):
+    if os.path.exists(path):
+        shutil.rmtree(path)     # Deletes even non-empty directories
+    os.makedirs(path)           # Recreates it
+
+reset_directory("logs")
+
 
 if argv[1] == '--all':
     amoobae = db.systems.find()

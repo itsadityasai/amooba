@@ -1,7 +1,3 @@
-
-# amooba.py
-LOGFILE_NAME = "movement"
-
 # energy.py
 NEW_ENERGY_VAL = 60 # organisms with energy below this are marked as "needing energy" (they must hunt, can't reproduce)
 MIN_ENERGY_VAL = 1
