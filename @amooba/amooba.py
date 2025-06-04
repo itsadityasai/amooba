@@ -40,5 +40,5 @@ try:
 except Exception as e:
 
     console.error(f"[{str(datetime.now())}] organism {_id} : Exception : {e}")
-    db.systems.remove({'_id' : _id})
+    db.systems.delete_one({'_id' : _id})
     die()

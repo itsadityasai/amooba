@@ -9,7 +9,7 @@ from GLOBALS import *
 
 
 def __delete(_id) -> None:
-    db.systems.remove({'_id': _id})
+    db.systems.delete_one({'_id': _id})
     db.env.update_one(
         {'object': f'amooba{_id}'},
         {'$set': {'object': None}}
@@ -37,8 +37,8 @@ def hunt(predator) -> list: # doesn't check if needsEnergy()
     hunted = []
 
     stop_hunting = False
-    for x in range(MIN_X-1, MAX_X+1, 1):
-        for y in range(MIN_Y-1, MAX_Y+1, 1):
+    for x in range(MIN_X, MAX_X+1, 1):
+        for y in range(MIN_Y, MAX_Y+1, 1):
             arrived = goto(predator, [x, y])
             if arrived:
                 nearby_prey = get_nearby_amoobae(predator)
