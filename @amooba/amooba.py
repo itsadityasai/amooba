@@ -13,8 +13,11 @@ _id = int(argv[1])
 import energy, feed, movement, plane, reproduce
 from datetime import datetime
 from random import randint
+from GLOBALS import *
 
-movement.logfile = open(f"logs/bob.log", 'a')
+# NOTE: not really accurate because there is no lock
+
+movement.logfile = open(f"logs/{LOGFILE_NAME}.log", 'a')
 
 try:
 

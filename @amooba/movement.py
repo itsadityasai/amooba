@@ -4,7 +4,11 @@ import pymongo
 client = pymongo.MongoClient("localhost", 27017)
 db = client.amooba
 
+from GLOBALS import *
+
+
 logfile = None
+
 
 def goto(_id, new_location) -> bool: #new_location is an ARRAY NOT A TUPLE
 
@@ -36,7 +40,7 @@ def goto(_id, new_location) -> bool: #new_location is an ARRAY NOT A TUPLE
         )
         depleteEnergy(
             _id,
-            __distance(original_location, new_location) / 100
+            __distance(original_location, new_location) / ENERGY_MOVEMENT_DROP
         )
         logfile.write(f"{_id}:{original_location}:{new_location}\n")
         return True

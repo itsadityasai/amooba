@@ -1,8 +1,9 @@
-# energy range : 1 - 100
-
 import pymongo
 client = pymongo.MongoClient("localhost", 27017)
 db = client.amooba
+
+from GLOBALS import *
+
 
 class InvalidEnergyErr(Exception):
     pass
@@ -23,7 +24,7 @@ def depleteEnergy(_id, amount) -> int:
 
     newEnergyVal = getEnergy(_id) - amount
 
-    if (newEnergyVal < 1):
+    if (newEnergyVal < MIN_ENERGY_VAL):
         raise InvalidEnergyErr
 
     __setEnergy(_id, newEnergyVal)
@@ -33,7 +34,7 @@ def increaseEnergy(_id, amount) -> int:
 
     newEnergyVal = getEnergy(_id) + amount
 
-    if (newEnergyVal > 100):
+    if (newEnergyVal > MAX_ENERGY_VAL):
         raise InvalidEnergyErr
 
     __setEnergy(_id, newEnergyVal)
@@ -43,7 +44,7 @@ def increaseEnergy(_id, amount) -> int:
 def needsEnergy(_id) -> bool:
     e = getEnergy(_id)
 
-    if e > 60:
+    if e > NEW_ENERGY_VAL:
         return False
     else:
         return True

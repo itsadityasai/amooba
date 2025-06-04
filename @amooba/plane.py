@@ -1,9 +1,11 @@
 # no two objects can lie at one point on the plane
-# this plane is a 1001x1001 grid, with a total of 1002001 locations
 
 import pymongo
 client = pymongo.MongoClient("localhost", 27017)
 db = client.amooba
+
+from GLOBALS import *
+
 
 def whereIs(_id) -> list:
     x = db.env.find_one({"object": f"amooba{_id}"})
@@ -42,8 +44,8 @@ def getNearbyObjects(nearwhom): # includes nearwhom
     x = int(iAmAt[0])
     y = int(iAmAt[1])
     nearby_coords = []
-    for cx in range(x - 5, x + 6, 1):
-        for cy in range(y - 5, y + 6, 1):
+    for cx in range(x - NEARBY_X, x + NEARBY_X + 1, 1):
+        for cy in range(y - NEARBY_Y, y + NEARBY_Y + 1, 1):
             nearby_coords.append([cx, cy])
     r = db.env.find(
         {
