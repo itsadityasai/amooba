@@ -15,11 +15,20 @@ def getParent(_id):
         return 0 # 0 isn't an active organsim (it's kinda a template organism), and seeing as all other modules handle dead organisms in some way this shouldn't cause any problems
     return rec['parent'].replace('amooba', '')
 
+def isSexReceptive():
+
+    from random import randint
+
+    if (randint(1, 2000) > 0): 
+        return True
+    else:
+        return False
+
 
 def canReproduce(_id):
     from energy import getEnergy, needsEnergy
 
-    if (needsEnergy(_id)):
+    if (needsEnergy(_id) or not isSexReceptive()):
         return False
     else:
         return True
