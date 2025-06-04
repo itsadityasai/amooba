@@ -55,19 +55,10 @@ def reproduce(parent_id): # does not check if canReproduce()
         except pymongo.errors.DuplicateKeyError:
             child['_id'] += 1
 
-    try:
-        random_point = db.env.aggregate([
-            { '$match': { 'object': None } },
-            { '$sample': { 'size': 1 } }
-        ]).next()
-
-        db.env.update_one(
-            { '_id': random_point['_id'] },
-            { '$set': { 'object': f'amooba{child["_id"]}' } }
-        )
-    except StopIteration:
-        console.error("No empty space to place new amooba!")
-
+    db.env.update_one(
+        {'object': None},
+        {'$set': {'object': f'amooba{child["_id"]}'}}
+    )
 
     depleteEnergy(parent_id, PARENT_ENERGY_DROP)
     __startNewOrganism(child['_id'])
