@@ -35,7 +35,7 @@ def canReproduce(_id):
 
 def __startNewOrganism(new_organism_id):
     from subprocess import Popen
-    Popen(f'python start.py --one {new_organism_id}', shell=True)
+    Popen(f'python start.py --one {new_organism_id} --keeplogs', shell=True)
 
 
 def reproduce(parent_id): # does not check if canReproduce()
