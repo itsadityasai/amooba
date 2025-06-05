@@ -174,6 +174,15 @@ The simulation generates real-time population graphs through `monitorGrowth.py`:
 - Total energy distribution
 - Growth rate visualization
 
+Run `monitorGrowth.py` in another terminal, and hit Ctrl+C when done recording the simulation. A graph will show up on screen. It can be saved by clicking the save button next to it.
+
+The repo you download contains some sample images in `graphs/`. These are from an old version of `monitorGrowth.py` that did not record the sum energy curve; new graphs will have both a population and energy curve.
+
+<img src='graphs/Figure_2.png'>
+X-AXIS: Seconds (Running)
+
+Y-AXIS: Numeric (Total energy/number of organisms)
+
 _Run the monitor script during simulation to see live population dynamics_
 
 ## Known Issues
