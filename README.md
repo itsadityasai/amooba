@@ -1,4 +1,4 @@
-# Amooba — Ecosystem Simulation
+# Amooba — Distributed Artificial Life Simulation
 
 A multi-agent artificial life simulation where simple organisms (amoobae) compete for survival in a 2D environment. Each amooba is an independent process that can move, hunt, feed, and reproduce based on energy levels and survival instincts.
 
